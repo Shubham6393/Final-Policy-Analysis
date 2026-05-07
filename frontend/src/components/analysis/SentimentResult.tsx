@@ -96,7 +96,7 @@ export function SentimentResult({ result }: SentimentResultProps) {
                             <span className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Predicted Sentiment</span>
                             <div className="flex items-center gap-4 mt-1">
                                 <span className="text-4xl font-extrabold" style={{ color: colorHex }}>
-                                    {result.sentiment.toUpperCase()}
+                                    {result.sentiment?.toUpperCase()}
                                 </span>
                                 <Badge variant={badgeVariant} className="text-sm px-3 py-1" style={{ backgroundColor: colorHex, color: 'white', border: 'none' }}>
                                     {result.confidence}% Confidence
@@ -139,12 +139,12 @@ export function SentimentResult({ result }: SentimentResultProps) {
                                     r="40"
                                     fill="transparent"
                                     strokeDasharray="251.2"
-                                    strokeDashoffset={251.2 - (251.2 * result.confidence) / 100}
+                                    strokeDashoffset={251.2 - (251.2 * (result.confidence ?? 0)) / 100}
                                     style={{ transform: 'rotate(-90deg)', transformOrigin: '50% 50%' }}
                                 />
                             </svg>
                             <div className="absolute flex flex-col items-center">
-                                <span className="text-2xl font-bold">{result.confidence}%</span>
+                                <span className="text-2xl font-bold">{result.confidence ?? 0}%</span>
                                 <span className="text-[10px] text-muted-foreground uppercase">Confidence</span>
                             </div>
                         </div>
