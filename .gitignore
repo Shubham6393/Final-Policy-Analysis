@@ -1,0 +1,8 @@
+frontend/node_modules/
+frontend/.env.local
+frontend/.next/
+sentiment_analysis_pipeline/__pycache__/
+sentiment_analysis_pipeline/venv/
+sentiment_analysis_pipeline/datasets/
+sentiment_analysis_pipeline/public_comments.csv
+sentiment_analysis_pipeline/results/*.csv
